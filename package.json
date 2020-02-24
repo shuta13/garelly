@@ -1,0 +1,27 @@
+{
+  "name": "garelly",
+  "version": "1.0.0",
+  "description": "my garelly website",
+  "main": "index.js",
+  "repository": "git@github.com:shuta13/garelly.git",
+  "scripts": {
+    "dev": "concurrently 'yarn watch' 'yarn serve'",
+    "serve": "browser-sync start -c ./config/bs-config.js",
+    "watch": "webpack --mode development --config ./config/webpack.config.js -w",
+    "build": "webpack --mode production --config ./config/webpack.config.js"
+  },
+  "author": "did0es",
+  "license": "MIT",
+  "engines": {
+    "node": "12.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "concurrently": "^5.1.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}
