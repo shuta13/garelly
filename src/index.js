@@ -1,1 +1,0 @@
-console.log("f*ck off, sh*t");
