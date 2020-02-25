@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.ts");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/pages/index.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -98,15 +98,15 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexport
 
 /***/ }),
 
-/***/ "./src/index.ts":
-/*!**********************!*\
-  !*** ./src/index.ts ***!
-  \**********************/
+/***/ "./src/pages/index.ts":
+/*!****************************!*\
+  !*** ./src/pages/index.ts ***!
+  \****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Hello_1 = __webpack_require__(/*! ./components/partials/Hello */ \"./src/components/partials/Hello.ts\");\nconsole.log(\"f*ck up, sh*t\");\nvar greet = function () {\n    console.log(\"byebye\");\n};\ngreet();\nHello_1.hello();\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Hello_1 = __webpack_require__(/*! ../components/partials/Hello */ \"./src/components/partials/Hello.ts\");\nconsole.log(\"f*ck up, sh*t\");\nvar greet = function () {\n    console.log(\"byebye\");\n};\ngreet();\nHello_1.hello();\n\n\n//# sourceURL=webpack:///./src/pages/index.ts?");
 
 /***/ })
 

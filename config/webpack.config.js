@@ -6,8 +6,8 @@ const PUBLIC_PATH = path.resolve(__dirname, "../public");
 
 module.exports = {
   entry: {
-    index: SRC_PATH + "/index.ts",
-    contents: SRC_PATH + "/components/pages/contents.ts"
+    index: SRC_PATH + "/pages/index.ts",
+    contents: SRC_PATH + "/pages/contents.ts"
   },
   output: {
     filename: "[name].js",
@@ -17,18 +17,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "garelly",
       inject: false,
-      minify: true,
+      minify: false,
       chunks: ["index"],
       filename: "index.html",
-      template: "src/components/pages/index.html"
+      template: "src/pages/index.html"
     }),
     new HtmlWebpackPlugin({
       title: "garelly - contents",
       inject: false,
-      minify: true,
+      minify: false,
       chunks: ["contents"],
       filename: "contents.html",
-      template: "src/components/pages/contents.html"
+      template: "src/pages/contents.html"
     })
   ],
   module: {

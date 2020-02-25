@@ -81,20 +81,20 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/components/pages/contents.ts");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/pages/contents.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/components/pages/contents.ts":
-/*!******************************************!*\
-  !*** ./src/components/pages/contents.ts ***!
-  \******************************************/
+/***/ "./src/pages/contents.ts":
+/*!*******************************!*\
+  !*** ./src/pages/contents.ts ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nconsole.log(\"this is contents\");\n\n\n//# sourceURL=webpack:///./src/components/pages/contents.ts?");
+eval("\nconsole.log(\"this is contents pages.\");\n\n\n//# sourceURL=webpack:///./src/pages/contents.ts?");
 
 /***/ })
 
