@@ -18,7 +18,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "garelly",
       inject: false,
-      minify: false,
+      minify: true,
       chunks: ["index"],
       filename: "index.html",
       template: PAGES_PATH + "/index.html"
@@ -26,7 +26,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "garelly - contents",
       inject: false,
-      minify: false,
+      minify: true,
       chunks: ["contents"],
       filename: "contents.html",
       template: PAGES_PATH + "/contents/contents.html"
