@@ -16,14 +16,16 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "garelly",
-      inject: true,
+      inject: false,
+      minify: true,
       chunks: ["index"],
       filename: "index.html",
       template: "src/components/pages/index.html"
     }),
     new HtmlWebpackPlugin({
       title: "garelly - contents",
-      inject: true,
+      inject: false,
+      minify: true,
       chunks: ["contents"],
       filename: "contents.html",
       template: "src/components/pages/contents.html"
