@@ -106,7 +106,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexport
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Hello_1 = __webpack_require__(/*! ../components/partials/Hello */ \"./src/components/partials/Hello.ts\");\nconsole.log(\"f*ck up, sh*t\");\nvar greet = function () {\n    console.log(\"byebye\");\n};\ngreet();\nHello_1.hello();\n\n\n//# sourceURL=webpack:///./src/pages/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Hello_1 = __webpack_require__(/*! ../components/partials/Hello */ \"./src/components/partials/Hello.ts\");\nconsole.log(\"f*ck up, sh*t\");\nvar greet = function () {\n    console.log(\"ほほほ\");\n};\ngreet();\nHello_1.hello();\n\n\n//# sourceURL=webpack:///./src/pages/index.ts?");
 
 /***/ })
 

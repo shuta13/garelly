@@ -1,13 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const SRC_PATH    = path.resolve(__dirname, "../src");
+const SRC_PATH = path.resolve(__dirname, "../src");
+const PAGES_PATH = path.resolve(__dirname, "../src/pages");
 const PUBLIC_PATH = path.resolve(__dirname, "../public");
 
 module.exports = {
   entry: {
-    index: SRC_PATH + "/pages/index.ts",
-    contents: SRC_PATH + "/pages/contents.ts"
+    index: PAGES_PATH + "/index.ts",
+    contents: PAGES_PATH + "/contents/contents.ts"
   },
   output: {
     filename: "[name].js",
@@ -20,7 +21,7 @@ module.exports = {
       minify: false,
       chunks: ["index"],
       filename: "index.html",
-      template: "src/pages/index.html"
+      template: PAGES_PATH + "/index.html"
     }),
     new HtmlWebpackPlugin({
       title: "garelly - contents",
@@ -28,7 +29,7 @@ module.exports = {
       minify: false,
       chunks: ["contents"],
       filename: "contents.html",
-      template: "src/pages/contents.html"
+      template: PAGES_PATH + "/contents/contents.html"
     })
   ],
   module: {
