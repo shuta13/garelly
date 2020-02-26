@@ -1,4 +1,5 @@
 import { hello } from "../components/partials/Hello";
+import AppImage from "../components/common/AppImage/AppImage";
 
 import "./index.scss";
 
@@ -10,3 +11,5 @@ const greet = () => {
 
 greet();
 hello();
+
+document.body.innerHTML = AppImage;
