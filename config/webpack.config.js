@@ -61,6 +61,10 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: "html-loader"
+      },
+      {
+        test: /\.(gif|png|jpg|eot|wof|woff|woff2|ttf|svg)$/,
+        loader: "url-loader"
       }
     ]
   },
