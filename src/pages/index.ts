@@ -16,13 +16,11 @@ class AppImage extends HTMLElement {
     appImageInfo.setAttribute("class", "AppImageInfo");
     appImageInfo.textContent = "this is app-image";
     appImageWrap.appendChild(appImageInfo);
-    this.adaptStyleSheet(appImageWrap);
+    this.render(appImageWrap);
   };
 
-  adaptStyleSheet(appImageWrap: HTMLDivElement) {
-    // new shadow root
+  render(appImageWrap: HTMLDivElement) {
     const shadow = this.attachShadow({ mode: "open" });
-    // adopt stylesheet
     const shadowRoot = this.shadowRoot as any;
     css.replace(`@import "index.css";`).then(() => {
       shadow.appendChild(appImageWrap);
