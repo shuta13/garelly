@@ -131,6 +131,18 @@ eval("var api = __webpack_require__(/*! ../../../../node_modules/style-loader/di
 
 /***/ }),
 
+/***/ "./src/components/common/AppImage/AppImage.ts":
+/*!****************************************************!*\
+  !*** ./src/components/common/AppImage/AppImage.ts ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__webpack_require__(/*! ./AppImage.scss */ \"./src/components/common/AppImage/AppImage.scss\");\nconst css = new CSSStyleSheet();\nclass AppImage extends HTMLElement {\n    constructor() {\n        super();\n        this.createDOMTree();\n    }\n    createDOMTree() {\n        const appImageWrap = document.createElement(\"div\");\n        appImageWrap.setAttribute(\"class\", \"AppImageWrap\");\n        const appImageInfo = document.createElement(\"div\");\n        appImageInfo.setAttribute(\"class\", \"AppImageInfo\");\n        appImageInfo.textContent = \"this is app-image\";\n        appImageWrap.appendChild(appImageInfo);\n        this.render(appImageWrap);\n    }\n    ;\n    render(appImageWrap) {\n        const shadow = this.attachShadow({ mode: \"open\" });\n        const shadowRoot = this.shadowRoot;\n        css.replace(`@import \"index.css\";`).then(() => {\n            shadow.appendChild(appImageWrap);\n        });\n        shadowRoot.adoptedStyleSheets = [css];\n    }\n    ;\n}\nexports.default = AppImage;\ncustomElements.define(\"app-image\", AppImage);\n\n\n//# sourceURL=webpack:///./src/components/common/AppImage/AppImage.ts?");
+
+/***/ }),
+
 /***/ "./src/pages/index.scss":
 /*!******************************!*\
   !*** ./src/pages/index.scss ***!
@@ -150,7 +162,7 @@ eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/run
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__webpack_require__(/*! ./index.scss */ \"./src/pages/index.scss\");\n__webpack_require__(/*! ../components/common/AppImage/AppImage.scss */ \"./src/components/common/AppImage/AppImage.scss\");\nconst css = new CSSStyleSheet();\nclass AppImage extends HTMLElement {\n    constructor() {\n        super();\n        this.createDOMTree();\n    }\n    createDOMTree() {\n        const appImageWrap = document.createElement(\"div\");\n        appImageWrap.setAttribute(\"class\", \"AppImageWrap\");\n        const appImageInfo = document.createElement(\"div\");\n        appImageInfo.setAttribute(\"class\", \"AppImageInfo\");\n        appImageInfo.textContent = \"this is app-image\";\n        appImageWrap.appendChild(appImageInfo);\n        this.render(appImageWrap);\n    }\n    ;\n    render(appImageWrap) {\n        const shadow = this.attachShadow({ mode: \"open\" });\n        const shadowRoot = this.shadowRoot;\n        css.replace(`@import \"index.css\";`).then(() => {\n            shadow.appendChild(appImageWrap);\n        });\n        shadowRoot.adoptedStyleSheets = [css];\n    }\n    ;\n}\ncustomElements.define(\"app-image\", AppImage);\n\n\n//# sourceURL=webpack:///./src/pages/index.ts?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__webpack_require__(/*! ./index.scss */ \"./src/pages/index.scss\");\nconst AppImage_1 = __importDefault(__webpack_require__(/*! ../components/common/AppImage/AppImage */ \"./src/components/common/AppImage/AppImage.ts\"));\nnew AppImage_1.default();\n\n\n//# sourceURL=webpack:///./src/pages/index.ts?");
 
 /***/ })
 
