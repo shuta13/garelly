@@ -5,10 +5,10 @@ const css = new CSSStyleSheet() as any;
 export default class AppImage extends HTMLElement {
   constructor() {
     super();
-    this.createDOMTree();
+    this.create();
   }
 
-  createDOMTree() {
+  create() {
     const appImageWrap = document.createElement("div");
     appImageWrap.setAttribute("class", "AppImageWrap");
     const appImageInfo = document.createElement("div");
