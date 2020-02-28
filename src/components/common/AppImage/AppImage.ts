@@ -9,20 +9,19 @@ export default class AppImage extends HTMLElement {
   }
 
   create() {
+    const appImageClip = document.createElement("div");
+    appImageClip.setAttribute("class", "AppImageClip");
     const appImageWrap = document.createElement("div");
     appImageWrap.setAttribute("class", "AppImageWrap");
-    const appImageInfo = document.createElement("div");
-    appImageInfo.setAttribute("class", "AppImageInfo");
-    appImageInfo.textContent = "this is app-image";
-    appImageWrap.appendChild(appImageInfo);
-    this.render(appImageWrap);
+    appImageClip.appendChild(appImageWrap);
+    this.render(appImageClip);
   };
 
-  render(appImageWrap: HTMLDivElement) {
+  render(appImageClip: HTMLDivElement) {
     const shadow = this.attachShadow({ mode: "open" });
     const shadowRoot = this.shadowRoot as any;
     css.replace(`@import "index.css";`).then(() => {
-      shadow.appendChild(appImageWrap);
+      shadow.appendChild(appImageClip);
     });
     shadowRoot.adoptedStyleSheets = [css];
   };
