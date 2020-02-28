@@ -1,15 +1,21 @@
-import { hello } from "../components/partials/Hello";
-import AppImage from "../components/common/AppImage/AppImage";
-
 import "./index.scss";
+import "../components/common/AppImage/AppImage.scss";
 
-console.log("f*ck up, sh*t");
+class AppImage extends HTMLElement {
+  constructor() {
+    super();
 
-const greet = () => {
-  console.log("ほほほ");
-};
+    const shadow = this.attachShadow({ mode: "open" });
 
-greet();
-hello();
+    const appImageWrap = document.createElement("div");
+    appImageWrap.setAttribute("class", "AppImageWrap");
+    const appImageInfo = document.createElement("div");
+    appImageInfo.setAttribute("class", "AppImageInfo");
+    appImageInfo.textContent = "this is app-image";
+    appImageWrap.appendChild(appImageInfo);
 
-document.body.innerHTML = AppImage;
+    shadow.appendChild(appImageWrap)
+  }
+}
+
+customElements.define("app-image", AppImage);

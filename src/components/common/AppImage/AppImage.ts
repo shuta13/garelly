@@ -1,4 +1,4 @@
-const AppImage = require("./AppImage.html"); 
+const AppImageHTML = require("./AppImage.html"); 
 import "./AppImage.scss";
 
-export default AppImage;
+export default AppImageHTML;

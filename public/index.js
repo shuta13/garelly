@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".AppImageWrap {\\n  width: 100vw;\\n  height: 100vh;\\n  display: flex;\\n  justify-content: center;\\n  align-items: center;\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/components/common/AppImage/AppImage.scss?./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/sass-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".AppImageWrap {\\n  width: 100vw;\\n  height: 100vh;\\n  display: flex;\\n  justify-content: center;\\n  align-items: center;\\n  background: #1d1d1d;\\n  color: #fff;\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/components/common/AppImage/AppImage.scss?./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -132,17 +132,6 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
-/***/ "./src/components/common/AppImage/AppImage.html":
-/*!******************************************************!*\
-  !*** ./src/components/common/AppImage/AppImage.html ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n<head>\\n  <meta charset=\\\"UTF-8\\\">\\n  <meta name=\\\"viewport\\\" content=\\\"width=device-width,initial-scale=1.0\\\">\\n</head>\\n<body>\\n  <div class=\\\"AppImageWrap\\\">\\n    <div>\\n      this is app-image\\n    </div>\\n  </div>\\n</body>\\n</html>\";\n\n//# sourceURL=webpack:///./src/components/common/AppImage/AppImage.html?");
-
-/***/ }),
-
 /***/ "./src/components/common/AppImage/AppImage.scss":
 /*!******************************************************!*\
   !*** ./src/components/common/AppImage/AppImage.scss ***!
@@ -151,30 +140,6 @@ eval("module.exports = \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n<head>\\n  <
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("var api = __webpack_require__(/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js??ref--5-1!../../../../node_modules/sass-loader/dist/cjs.js!./AppImage.scss */ \"./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js!./src/components/common/AppImage/AppImage.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\nvar exported = content.locals ? content.locals : {};\n\n\n\nmodule.exports = exported;\n\n//# sourceURL=webpack:///./src/components/common/AppImage/AppImage.scss?");
-
-/***/ }),
-
-/***/ "./src/components/common/AppImage/AppImage.ts":
-/*!****************************************************!*\
-  !*** ./src/components/common/AppImage/AppImage.ts ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar AppImage = __webpack_require__(/*! ./AppImage.html */ \"./src/components/common/AppImage/AppImage.html\");\n__webpack_require__(/*! ./AppImage.scss */ \"./src/components/common/AppImage/AppImage.scss\");\nexports.default = AppImage;\n\n\n//# sourceURL=webpack:///./src/components/common/AppImage/AppImage.ts?");
-
-/***/ }),
-
-/***/ "./src/components/partials/Hello.ts":
-/*!******************************************!*\
-  !*** ./src/components/partials/Hello.ts ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.hello = function () {\n    console.log(\"f*ck\");\n};\n\n\n//# sourceURL=webpack:///./src/components/partials/Hello.ts?");
 
 /***/ }),
 
@@ -197,7 +162,7 @@ eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/run
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar Hello_1 = __webpack_require__(/*! ../components/partials/Hello */ \"./src/components/partials/Hello.ts\");\nvar AppImage_1 = __importDefault(__webpack_require__(/*! ../components/common/AppImage/AppImage */ \"./src/components/common/AppImage/AppImage.ts\"));\n__webpack_require__(/*! ./index.scss */ \"./src/pages/index.scss\");\nconsole.log(\"f*ck up, sh*t\");\nvar greet = function () {\n    console.log(\"ほほほ\");\n};\ngreet();\nHello_1.hello();\ndocument.body.innerHTML = AppImage_1.default;\n\n\n//# sourceURL=webpack:///./src/pages/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__webpack_require__(/*! ./index.scss */ \"./src/pages/index.scss\");\n__webpack_require__(/*! ../components/common/AppImage/AppImage.scss */ \"./src/components/common/AppImage/AppImage.scss\");\nclass AppImage extends HTMLElement {\n    constructor() {\n        super();\n        const shadow = this.attachShadow({ mode: \"open\" });\n        const appImageWrap = document.createElement(\"div\");\n        appImageWrap.setAttribute(\"class\", \"AppImageWrap\");\n        const appImageInfo = document.createElement(\"div\");\n        appImageInfo.setAttribute(\"class\", \"AppImageInfo\");\n        appImageInfo.textContent = \"this is app-image\";\n        appImageWrap.appendChild(appImageInfo);\n        shadow.appendChild(appImageWrap);\n    }\n}\ncustomElements.define(\"app-image\", AppImage);\n\n\n//# sourceURL=webpack:///./src/pages/index.ts?");
 
 /***/ })
 
