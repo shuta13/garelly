@@ -40,6 +40,7 @@ export default class Header extends HTMLElement {
     // icon
     const headerIconWrap = document.createElement("button");
     headerIconWrap.setAttribute("class", "HeaderIconWrap");
+    headerIconWrap.setAttribute("aria-label", "Header Icon Button");
     const headerIcon = document.createElement("img");
     headerIcon.setAttribute("class", "HeaderIcon");
     headerIcon.setAttribute("alt", "icon");
@@ -122,6 +123,7 @@ export default class Header extends HTMLElement {
     // menu close icon
     const headerMenuCloseWrap = document.createElement("button");
     headerMenuCloseWrap.setAttribute("class", "HeaderMenuCloseWrap");
+    headerMenuCloseWrap.setAttribute("aria-label", "Header Menu Close Button");
     const headerMenuCloseIcon = document.createElement("img");
     headerMenuCloseIcon.setAttribute("class", "HeaderMenuCloseIcon");
     headerMenuCloseIcon.setAttribute("alt", "icon");
