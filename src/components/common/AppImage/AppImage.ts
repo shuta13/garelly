@@ -1,7 +1,8 @@
 import "./AppImage.scss";
 import error from "../../../assets/img/error-image.jpg";
-import works01 from "../../../assets/img/works01.jpg";
-console.log(works01);
+import("../../../assets/img/works01.jpg").then((works01) => {
+  console.log(`loaded ${works01.default}`);
+})
 
 const css = new CSSStyleSheet() as any;
 
