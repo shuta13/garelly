@@ -9,8 +9,15 @@ body, html {
   width: 100vw;
   display: flex;
   min-height: 100vh;
+  flex-wrap: wrap;
+  background: #dbdbdb;
+}
+
+.IndexAppImageWrap {
+  width: 100vw;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background: #dbdbdb;
+  margin-top: 88px;
 }
