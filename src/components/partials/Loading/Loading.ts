@@ -33,6 +33,7 @@ export default class Loading extends HTMLElement {
         align-items: center;
         top: 0;
         background: #dbdbdb;
+        transition: opacity ease-out .4s;
       }
 
       .LoadingText {
@@ -50,7 +51,7 @@ export default class Loading extends HTMLElement {
       const LoadingFinishedStyle = document.createElement("style");
       LoadingFinishedStyle.textContent = `
         .LoadingFinished {
-          z-index: -1;
+          opacity: 0;
         }
       `;
       shadow.appendChild(LoadingFinishedStyle);
