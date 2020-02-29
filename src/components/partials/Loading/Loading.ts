@@ -25,6 +25,7 @@ export default class Loading extends HTMLElement {
     const LoadingStyle = document.createElement("style");
     LoadingStyle.textContent = `
       .LoadingWrap {
+        position: absolute;
         width: 100vw;
         height: 100vh;
         display: flex;
