@@ -66,7 +66,7 @@ export default class Header extends HTMLElement {
 
       // color animation
       const defaultColor = "#dbdbdb";
-      const onColor = "#52D53E";
+      const onColor = "#3FDF26";
       textElem.onmouseenter = () => {
         textElem.style.color = onColor;
       };
@@ -176,7 +176,7 @@ export default class Header extends HTMLElement {
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgba(0, 0, 0, .5);
+        background: rgba(0, 0, 0, .6);
         transition: transform cubic-bezier(.9,.23,.48,.97) .4s;
         transform: translateX(-100%);
       }
