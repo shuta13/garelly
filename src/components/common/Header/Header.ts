@@ -162,9 +162,10 @@ export default class Header extends HTMLElement {
       }
 
       .HeaderMenuCenter {
-        width: 60vw;
-        min-width: 640px;
-        height: 60vh;
+        padding: 0;
+        width: 60%;
+        max-width: 640px;
+        text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -179,11 +180,12 @@ export default class Header extends HTMLElement {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 16px;
+        margin: 32px 0;
       }
 
       .HeaderMenuText {
-        font-size: 24px;
+        font-size: 32px;
+        font-family: "Sarpanch";
         color: #dbdbdb;
         cursor: pointer;
         text-decoration: none;
