@@ -11,6 +11,17 @@ for (let i = 0; i < 8; i++) {
     })
 }
 
+const graphics: Array<string> = [];
+for (let i = 0; i < 1; i++) {
+  import(`../../../../assets/graphics/img/works${i}.jpg`)
+    .then((works) => {
+      graphics.push(works.default);
+    })
+    .catch((e) => {
+      throw e;
+    })
+}
+
 export default class AppImage extends HTMLElement {
   constructor() {
     super();
@@ -28,7 +39,7 @@ export default class AppImage extends HTMLElement {
 
     // insert image
     let imgUrl: string | null = "";
-    if (this.hasAttribute("img")) {
+    if (this.hasAttribute("img") && images && graphics) {
       imgUrl = this.getAttribute("img");
       this.loadImage(`${imgUrl}`)
         .then(() => {

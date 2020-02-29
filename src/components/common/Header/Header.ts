@@ -207,12 +207,14 @@ export default class Header extends HTMLElement {
         cursor: pointer;
       }
 
-      .HeaderIcon, .HeaderMenuCloseIcon {
+      .HeaderIcon {
         width: 18px;
         height: auto;
       }
 
       .HeaderMenuCloseIcon {
+        width: 24px;
+        height: auto;
         transition: transform cubic-bezier(.9,.23,.48,.97) .4s;
       }
 
