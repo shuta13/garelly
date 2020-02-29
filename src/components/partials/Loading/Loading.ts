@@ -71,6 +71,8 @@ export default class Loading extends HTMLElement {
         }
       `;
       shadow.appendChild(LoadingWrapFinishedStyle);
+
+      // stop scroll while animation
       document.body.style.overflow = "hidden";
       setTimeout(() => {
         document.body.style.overflow = "scroll";
