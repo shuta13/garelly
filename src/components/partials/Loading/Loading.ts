@@ -7,11 +7,11 @@ export default class Loading extends HTMLElement {
 
   create() {
     const LoadingWrap = document.createElement("div");
-    LoadingWrap.setAttribute("class", "LoadingWrap LoadingFinished");
+    LoadingWrap.setAttribute("class", "LoadingWrap LoadingWrapFinished");
 
     const LoadingText = document.createElement("div");
-    LoadingText.setAttribute("class", "LoadingText");
-    LoadingText.textContent = "Loading...";
+    LoadingText.setAttribute("class", "LoadingText LoadingTextFinished");
+    LoadingText.textContent = "loAdinG";
     LoadingWrap.appendChild(LoadingText);
 
     this.render(LoadingWrap);
@@ -25,7 +25,6 @@ export default class Loading extends HTMLElement {
     const LoadingStyle = document.createElement("style");
     LoadingStyle.textContent = `
       .LoadingWrap {
-        position: absolute;
         width: 100vw;
         height: 100vh;
         display: flex;
@@ -33,12 +32,14 @@ export default class Loading extends HTMLElement {
         align-items: center;
         top: 0;
         background: #dbdbdb;
-        transition: opacity ease-out .4s;
+        transition: transform cubic-bezier(.56,.11,.45,.86) .8s;
       }
 
       .LoadingText {
         font-size: 32px;
+        font-family: "Major Mono Display";
         color: #1d1d1d;
+        transition: opacity cubic-bezier(.56,.11,.45,.86) .4s;
       }
     `;
     shadow.appendChild(LoadingStyle);
@@ -48,13 +49,21 @@ export default class Loading extends HTMLElement {
 
   setWillAnimate(shadow: ShadowRoot) {
     window.addEventListener("load", () => {
-      const LoadingFinishedStyle = document.createElement("style");
-      LoadingFinishedStyle.textContent = `
-        .LoadingFinished {
+      const LoadingTextFinishedStyle = document.createElement("style");
+      LoadingTextFinishedStyle.textContent = `
+        .LoadingTextFinished {
           opacity: 0;
         }
       `;
-      shadow.appendChild(LoadingFinishedStyle);
+      shadow.appendChild(LoadingTextFinishedStyle);
+
+      const LoadingWrapFinishedStyle = document.createElement("style");
+      LoadingWrapFinishedStyle.textContent = `
+        .LoadingWrapFinished {
+          transform: translateX(100%);
+        }
+      `;
+      shadow.appendChild(LoadingWrapFinishedStyle);
     })
   }
 };
