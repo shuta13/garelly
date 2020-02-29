@@ -28,9 +28,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "garelly - graphics",
       inject: false,
-      minify: true,
+      minify: false,
       chunks: ["graphics"],
-      filename: "index.html",
+      filename: "graphics/index.html",
       template: PAGES_PATH + "/graphics/index.html",
       favicon: SRC_PATH + "/assets/favicon.ico"
     }),
@@ -68,7 +68,7 @@ module.exports = {
         test: /\.(gif|png|jpg|eot|wof|woff|woff2|ttf|svg)$/,
         loader: "file-loader",
         options: {
-          name: "assets/brands/[name].[ext]"
+          name: "assets/img/[name].[ext]"
         }
       }
     ]
