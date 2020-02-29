@@ -65,18 +65,20 @@ export default class Header extends HTMLElement {
       headerMenuCenter.appendChild(textWrapElem);
 
       // color animation
+      const defaultColor = "#dbdbdb";
+      const onColor = "#52D53E";
       textElem.onmouseenter = () => {
-        textElem.style.color = "#48BB36";
+        textElem.style.color = onColor;
       };
       textElem.onmouseleave = () => {
-        textElem.style.color = "#dbdbdb";
+        textElem.style.color = defaultColor;
       };
       // touch
       textElem.ontouchstart = () => {
-        textElem.style.color = "#48BB36";
+        textElem.style.color = onColor;
       };
       textElem.ontouchend = () => {
-        textElem.style.color = "#dbdbdb";
+        textElem.style.color = defaultColor;
       };
     });
 
