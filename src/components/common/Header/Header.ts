@@ -47,10 +47,23 @@ export default class Header extends HTMLElement {
     headerMenuWrap.appendChild(headerMenuCenter);
 
     // menu text
-    const headerMenuTextWrap = document.createElement("li");
-    headerMenuTextWrap.setAttribute("class", "HeaderMenuTextWrap");
-    const headerMenuText = document.createElement("a");
-    headerMenuText.setAttribute("class", "HeaderMenuText");
+    const texts = ["home", "graphics"];
+    const menuTextWraps: {[key: string]: HTMLLIElement} = {};
+    const menuTexts: {[key: string]: HTMLAnchorElement} = {};
+    texts.map((text, index) => {
+      let textWrapElem = menuTextWraps["headerMenuTextWrap" + index];
+      let textElem = menuTexts["headerMenuText" + index];
+      let href = "/";
+      textWrapElem = document.createElement("li");
+      textWrapElem.setAttribute("class", "HeaderMenuTextWrap");
+      textElem = document.createElement("a");
+      textElem.setAttribute("class", "HeaderMenuText");
+      textElem.textContent = text.toUpperCase();
+      if (index > 0) href = `/${text}`;
+      textElem.href = href;
+      textWrapElem.appendChild(textElem);
+      headerMenuCenter.appendChild(textWrapElem);
+    });
 
     // menu close icon
     const headerMenuCloseWrap = document.createElement("button");
@@ -132,15 +145,6 @@ export default class Header extends HTMLElement {
         transform: translateX(-100%);
       }
 
-      .HeaderMenuCenter {
-        width: 60vw;
-        min-width: 640px;
-        height: 60vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
       .HeaderMenuCloseWrap {
         position: absolute;
         width: auto;
@@ -155,6 +159,34 @@ export default class Header extends HTMLElement {
         background: none;
         border: 0;
         cursor: pointer;
+      }
+
+      .HeaderMenuCenter {
+        width: 60vw;
+        min-width: 640px;
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .HeaderMenuTextWrap {
+        list-style: none;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 16px;
+      }
+
+      .HeaderMenuText {
+        font-size: 24px;
+        color: #dbdbdb;
+        cursor: pointer;
+        text-decoration: none;
       }
     `
 
