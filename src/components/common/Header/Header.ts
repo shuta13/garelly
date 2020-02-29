@@ -8,20 +8,31 @@ export default class Header extends HTMLElement {
   }
 
   create() {
+    // root
     const headerWrap = document.createElement("div");
     headerWrap.setAttribute("class", "HeaderWrap");
+
+    // logo
     const headerLogoWrap = document.createElement("div");
     headerLogoWrap.setAttribute("class", "HeaderLogoWrap");
+    headerWrap.appendChild(headerLogoWrap);
+
     const headerLogo = document.createElement("img");
     headerLogo.setAttribute("class", "HeaderLogo");
     headerLogo.src = logo;
+    headerLogoWrap.appendChild(headerLogo);
+
+    // icon
+    const headerIconWrap = document.createElement("button");
+    headerIconWrap.setAttribute("class", "HeaderIconWrap");
+    headerWrap.appendChild(headerIconWrap)
+  
     const headerIcon = document.createElement("img");
     headerIcon.setAttribute("class", "HeaderIcon");
     headerIcon.src = icon;
-    headerLogoWrap.appendChild(headerLogo);
-    headerWrap.appendChild(headerLogoWrap);
-    headerWrap.appendChild(headerIcon);
+    headerIconWrap.appendChild(headerIcon);
 
+    // render whole tree
     this.render(headerWrap);
   }
 
@@ -49,16 +60,27 @@ export default class Header extends HTMLElement {
       }
 
       .HeaderLogo {
-        width: 176px;
+        width: 160px;
         height: auto;
       }
 
-      .HeaderIcon {
+      .HeaderIconWrap {
         position: absolute;
-        right: 0;
-        width: 20px;
+        width: auto;
         height: auto;
-        margin-right: 32px;
+        left: 0;
+        margin-left: 16px;
+        display: flex;
+        justify-content: center;
+        align-item: center;
+        background: none;
+        border: 0;
+        cursor: pointer;
+      }
+
+      .HeaderIcon {
+        width: 18px;
+        height: auto;
       }
     `
 
