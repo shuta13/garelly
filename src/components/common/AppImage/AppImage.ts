@@ -1,5 +1,7 @@
 import "./AppImage.scss";
+import error from "../../../assets/images/error-image.jpg";
 import works01 from "../../../assets/images/works01.jpg";
+
 const css = new CSSStyleSheet() as any;
 
 export default class AppImage extends HTMLElement {
@@ -9,14 +11,24 @@ export default class AppImage extends HTMLElement {
   }
 
   create() {
+    // clip, wrap image dom
     const appImageClip = document.createElement("div");
     appImageClip.setAttribute("class", "AppImageClip");
     const appImageWrap = document.createElement("div");
     appImageWrap.setAttribute("class", "AppImageWrap");
+
+    // insert image
+    let imgUrl: string | null = "";
+    if (this.hasAttribute("img")) {
+      imgUrl = this.getAttribute("img");
+    } else {
+      imgUrl = error;
+    }
     const appImage = document.createElement("img");
+    if (imgUrl !== null) appImage.src = imgUrl;
     appImage.setAttribute("class", "AppImage");
-    appImage.src = works01;
     appImageWrap.appendChild(appImage);
+
     appImageClip.appendChild(appImageWrap);
     this.render(appImageClip);
   };

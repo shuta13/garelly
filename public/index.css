@@ -34,3 +34,8 @@ body, html {
   justify-content: center;
   align-items: center;
 }
+
+.AppImage {
+  width: 100%;
+  height: auto;
+}
