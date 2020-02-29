@@ -1,8 +1,17 @@
 import "./AppImage.scss";
 import error from "../../../assets/img/error-image.jpg";
-import("../../../assets/img/works01.jpg").then((works01) => {
-  console.log(`loaded ${works01.default}`);
-});
+
+const images: Array<string> = [];
+for (let i = 0; i < 10; i++) {
+  import(`../../../assets/img/works${i}.jpg`)
+    .then((works) => {
+      console.log(`loaded ${works.default}`);
+      images.push(works.default);
+    })
+    .catch((e) => {
+      throw e;
+    })
+}
 
 const css = new CSSStyleSheet() as any;
 
