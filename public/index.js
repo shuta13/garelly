@@ -120,15 +120,27 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
-/***/ "./src/assets/images/error-image.jpg":
-/*!*******************************************!*\
-  !*** ./src/assets/images/error-image.jpg ***!
-  \*******************************************/
+/***/ "./src/assets/img/error-image.jpg":
+/*!****************************************!*\
+  !*** ./src/assets/img/error-image.jpg ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"assets/images/error-image.jpg\");\n\n//# sourceURL=webpack:///./src/assets/images/error-image.jpg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"assets/img/error-image.jpg\");\n\n//# sourceURL=webpack:///./src/assets/img/error-image.jpg?");
+
+/***/ }),
+
+/***/ "./src/assets/img/works01.jpg":
+/*!************************************!*\
+  !*** ./src/assets/img/works01.jpg ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"assets/img/works01.jpg\");\n\n//# sourceURL=webpack:///./src/assets/img/works01.jpg?");
 
 /***/ }),
 
@@ -151,7 +163,7 @@ eval("var api = __webpack_require__(/*! ../../../../node_modules/style-loader/di
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__webpack_require__(/*! ./AppImage.scss */ \"./src/components/common/AppImage/AppImage.scss\");\nconst error_image_jpg_1 = __importDefault(__webpack_require__(/*! ../../../assets/images/error-image.jpg */ \"./src/assets/images/error-image.jpg\"));\nconst css = new CSSStyleSheet();\nclass AppImage extends HTMLElement {\n    constructor() {\n        super();\n        this.create();\n    }\n    create() {\n        // clip, wrap image dom\n        const appImageClip = document.createElement(\"div\");\n        appImageClip.setAttribute(\"class\", \"AppImageClip\");\n        const appImageWrap = document.createElement(\"div\");\n        appImageWrap.setAttribute(\"class\", \"AppImageWrap\");\n        // insert image\n        let imgUrl = \"\";\n        if (this.hasAttribute(\"img\")) {\n            imgUrl = this.getAttribute(\"img\");\n        }\n        else {\n            imgUrl = error_image_jpg_1.default;\n        }\n        const appImage = document.createElement(\"img\");\n        if (imgUrl !== null)\n            appImage.src = imgUrl;\n        appImage.setAttribute(\"class\", \"AppImage\");\n        appImageWrap.appendChild(appImage);\n        appImageClip.appendChild(appImageWrap);\n        this.render(appImageClip);\n    }\n    ;\n    render(appImageClip) {\n        const shadow = this.attachShadow({ mode: \"open\" });\n        const shadowRoot = this.shadowRoot;\n        css.replace(`@import \"index.css\";`).then(() => {\n            shadow.appendChild(appImageClip);\n        });\n        shadowRoot.adoptedStyleSheets = [css];\n    }\n    ;\n}\nexports.default = AppImage;\ncustomElements.define(\"app-image\", AppImage);\n\n\n//# sourceURL=webpack:///./src/components/common/AppImage/AppImage.ts?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__webpack_require__(/*! ./AppImage.scss */ \"./src/components/common/AppImage/AppImage.scss\");\nconst error_image_jpg_1 = __importDefault(__webpack_require__(/*! ../../../assets/img/error-image.jpg */ \"./src/assets/img/error-image.jpg\"));\nconst works01_jpg_1 = __importDefault(__webpack_require__(/*! ../../../assets/img/works01.jpg */ \"./src/assets/img/works01.jpg\"));\nconsole.log(works01_jpg_1.default);\nconst css = new CSSStyleSheet();\nclass AppImage extends HTMLElement {\n    constructor() {\n        super();\n        this.create();\n    }\n    create() {\n        // clip, wrap image dom\n        const appImageClip = document.createElement(\"div\");\n        appImageClip.setAttribute(\"class\", \"AppImageClip\");\n        const appImageWrap = document.createElement(\"div\");\n        appImageWrap.setAttribute(\"class\", \"AppImageWrap\");\n        // insert image\n        let imgUrl = \"\";\n        if (this.hasAttribute(\"img\")) {\n            imgUrl = this.getAttribute(\"img\");\n        }\n        else {\n            imgUrl = error_image_jpg_1.default;\n        }\n        const appImage = document.createElement(\"img\");\n        if (imgUrl !== null)\n            appImage.src = imgUrl;\n        appImage.setAttribute(\"class\", \"AppImage\");\n        appImageWrap.appendChild(appImage);\n        appImageClip.appendChild(appImageWrap);\n        this.render(appImageClip);\n    }\n    ;\n    render(appImageClip) {\n        const shadow = this.attachShadow({ mode: \"open\" });\n        const shadowRoot = this.shadowRoot;\n        css.replace(`@import \"index.css\";`).then(() => {\n            shadow.appendChild(appImageClip);\n        });\n        shadowRoot.adoptedStyleSheets = [css];\n    }\n    ;\n}\nexports.default = AppImage;\ncustomElements.define(\"app-image\", AppImage);\n\n\n//# sourceURL=webpack:///./src/components/common/AppImage/AppImage.ts?");
 
 /***/ }),
 

@@ -1,6 +1,7 @@
 import "./AppImage.scss";
-import error from "../../../assets/images/error-image.jpg";
-import works01 from "../../../assets/images/works01.jpg";
+import error from "../../../assets/img/error-image.jpg";
+import works01 from "../../../assets/img/works01.jpg";
+console.log(works01);
 
 const css = new CSSStyleSheet() as any;
 
