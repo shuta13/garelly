@@ -35,15 +35,18 @@ export default class Loading extends HTMLElement {
         align-items: center;
         top: 0;
         background: #dbdbdb;
-        transition: transform cubic-bezier(.9,.23,.48,.97) .8s;
+        transition: transform cubic-bezier(.9,.23,.48,.97) 1s;
         transition-delay: .8s;
       }
 
       .LoadingLogo {
         width: 160px;
         height: auto;
-        transition: opacity cubic-bezier(.9,.23,.48,.97) .4s, transform cubic-bezier(.9,.23,.48,.97) .8s;
-        transition-delay: .4s;
+        opacity: 1;
+        transform: translateX(0%);
+        transition: opacity cubic-bezier(.9,.23,.48,.97) .6s, transform cubic-bezier(.9,.23,.48,.97) .8s;
+        transition-delay: .2s;
+        animation-iteration-count: infinite;
       }
     `;
     shadow.appendChild(LoadingStyle);
