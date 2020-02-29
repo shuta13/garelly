@@ -1,7 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const workboxPlugin = require('workbox-webpack-plugin');
+const workboxPlugin = require("workbox-webpack-plugin");
+const TerserJSPlugin = require("terser-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const SRC_PATH = path.resolve(__dirname, "../src");
 const PAGES_PATH = path.resolve(__dirname, "../src/pages");
@@ -37,7 +39,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
-      chunkFilename: "[id].css"
+      chunkFilename: "[id].css",
     }),
     new workboxPlugin.GenerateSW({
       swDest: PUBLIC_PATH + "/sw.js",
@@ -88,5 +90,28 @@ module.exports = {
       ".js",
       "json"
     ]
-  }
+  },
+  optimization: {
+    minimizer: [
+      new TerserJSPlugin({
+        terserOptions: {
+          ecma: 6,
+          compress: {
+            drop_console: true
+          },
+          output: {
+            comments: false,
+            beautify: false,
+          },
+          extractComments: {
+            condition: true,
+            banner: (f) => {
+              return banner;
+            },
+          },
+        }
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ],
+  },
 };
