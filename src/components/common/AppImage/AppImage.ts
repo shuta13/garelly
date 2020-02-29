@@ -47,6 +47,7 @@ export default class AppImage extends HTMLElement {
           if (imgUrl !== null) appImage.src = imgUrl;
           appImage.setAttribute("part", "AppImage");
           appImage.setAttribute("class", "AppImage");
+          appImage.setAttribute("alt", "media");
           appImageWrap.appendChild(appImage);
         })
         .catch((e) => {

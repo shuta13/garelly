@@ -13,6 +13,7 @@ export default class Loading extends HTMLElement {
 
     const LoadingLogo = document.createElement("img");
     LoadingLogo.setAttribute("class", "LoadingLogo LoadingLogoFinished");
+    LoadingLogo.setAttribute("alt", "logo");
 
     // insert loading logo img
     let logoUrl: string | null = "";

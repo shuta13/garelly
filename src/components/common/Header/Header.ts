@@ -20,6 +20,7 @@ export default class Header extends HTMLElement {
 
     const headerLogo = document.createElement("img");
     headerLogo.setAttribute("class", "HeaderLogo");
+    headerLogo.setAttribute("alt", "logo");
 
     // insert logo img
     let logoUrl: string | null = "";
@@ -41,6 +42,7 @@ export default class Header extends HTMLElement {
     headerIconWrap.setAttribute("class", "HeaderIconWrap");
     const headerIcon = document.createElement("img");
     headerIcon.setAttribute("class", "HeaderIcon");
+    headerIcon.setAttribute("alt", "icon");
 
     // insert icon img
     let iconUrl: string | null = "";
@@ -122,6 +124,7 @@ export default class Header extends HTMLElement {
     headerMenuCloseWrap.setAttribute("class", "HeaderMenuCloseWrap");
     const headerMenuCloseIcon = document.createElement("img");
     headerMenuCloseIcon.setAttribute("class", "HeaderMenuCloseIcon");
+    headerMenuCloseIcon.setAttribute("alt", "icon");
     
     // insert close icon img
     let closeIconUrl: string | null = "";
