@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const workboxPlugin = require('workbox-webpack-plugin');
 
 const SRC_PATH = path.resolve(__dirname, "../src");
 const PAGES_PATH = path.resolve(__dirname, "../src/pages");
@@ -37,6 +38,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
+    }),
+    new workboxPlugin.GenerateSW({
+      swDest: PUBLIC_PATH + "/sw.js",
+      clientsClaim: true,
+      skipWaiting: true,
     })
   ],
   module: {
