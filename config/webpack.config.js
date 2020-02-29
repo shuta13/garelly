@@ -9,7 +9,7 @@ const PUBLIC_PATH = path.resolve(__dirname, "../public");
 module.exports = {
   entry: {
     index: PAGES_PATH + "/index.ts",
-    contents: PAGES_PATH + "/contents/contents.ts"
+    "graphics/index": PAGES_PATH + "/graphics/index.ts"
   },
   output: {
     filename: "[name].js",
@@ -26,12 +26,12 @@ module.exports = {
       favicon: SRC_PATH + "/assets/favicon.ico"
     }),
     new HtmlWebpackPlugin({
-      title: "garelly - contents",
+      title: "garelly - graphics",
       inject: false,
       minify: true,
-      chunks: ["contents"],
-      filename: "contents.html",
-      template: PAGES_PATH + "/contents/contents.html",
+      chunks: ["graphics"],
+      filename: "index.html",
+      template: PAGES_PATH + "/graphics/index.html",
       favicon: SRC_PATH + "/assets/favicon.ico"
     }),
     new MiniCssExtractPlugin({
@@ -68,7 +68,7 @@ module.exports = {
         test: /\.(gif|png|jpg|eot|wof|woff|woff2|ttf|svg)$/,
         loader: "file-loader",
         options: {
-          name: "assets/img/[name].[ext]"
+          name: "assets/brands/[name].[ext]"
         }
       }
     ]
