@@ -22,7 +22,8 @@ module.exports = {
       minify: true,
       chunks: ["index"],
       filename: "index.html",
-      template: PAGES_PATH + "/index.html"
+      template: PAGES_PATH + "/index.html",
+      favicon: SRC_PATH + "/assets/favicon.ico"
     }),
     new HtmlWebpackPlugin({
       title: "garelly - contents",
@@ -30,7 +31,8 @@ module.exports = {
       minify: true,
       chunks: ["contents"],
       filename: "contents.html",
-      template: PAGES_PATH + "/contents/contents.html"
+      template: PAGES_PATH + "/contents/contents.html",
+      favicon: SRC_PATH + "/assets/favicon.ico"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",

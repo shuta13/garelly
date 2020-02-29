@@ -5,7 +5,7 @@ const images: Array<string> = [];
 for (let i = 0; i < 8; i++) {
   import(`../../../assets/img/works${i}.jpg`)
     .then((works) => {
-      console.log(`loaded ${works.default}`);
+      console.log(`imported ${works.default}`);
       images.push(works.default);
     })
     .catch((e) => {
@@ -32,18 +32,33 @@ export default class AppImage extends HTMLElement {
     let imgUrl: string | null = "";
     if (this.hasAttribute("img")) {
       imgUrl = this.getAttribute("img");
+      this.loadImage(`${imgUrl}`)
+        .then(() => {
+          const appImage = document.createElement("img");
+          if (imgUrl !== null) appImage.src = imgUrl;
+          appImage.setAttribute("part", "AppImage");
+          appImage.setAttribute("class", "AppImage");
+          appImageWrap.appendChild(appImage);
+        })
+        .catch((e) => {
+          throw e;
+        });
     } else {
       imgUrl = error;
     }
-    const appImage = document.createElement("img");
-    if (imgUrl !== null) appImage.src = imgUrl;
-    appImage.setAttribute("part", "AppImage");
-    appImage.setAttribute("class", "AppImage");
-    appImageWrap.appendChild(appImage);
 
     appImageClip.appendChild(appImageWrap);
     this.render(appImageClip);
   };
+
+  loadImage(src: string) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(img);
+      img.src = src;
+    })
+  }
 
   render(appImageClip: HTMLDivElement) {
     const shadow = this.attachShadow({ mode: "open" });
