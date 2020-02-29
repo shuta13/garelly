@@ -1,4 +1,5 @@
 import "./index.scss";
+import "../../assets/img/ogp.jpg";
 
 import Loading from "../components/partials/Loading/Loading";
 new Loading();
