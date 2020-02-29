@@ -60,6 +60,7 @@ export default class Header extends HTMLElement {
     // open menu
     headerIconWrap.onclick = () => {
       headerMenuWrap.style.transform = "translateX(0%)";
+      headerMenuWrap.style.opacity = "1";
     };
 
     headerWrap.appendChild(headerIconWrap);
@@ -73,10 +74,11 @@ export default class Header extends HTMLElement {
     headerMenuWrap.appendChild(headerMenuCenter);
 
     // menu text
-    const texts = ["home", "graphics"];
+    const texts = ["home", "graphics", "about.me"];
     const menuTextWraps: {[key: string]: HTMLLIElement} = {};
     const menuTexts: {[key: string]: HTMLAnchorElement} = {};
     texts.map((text, index) => {
+      // create
       let textWrapElem = menuTextWraps["headerMenuTextWrap" + index];
       let textElem = menuTexts["headerMenuText" + index];
       let href = "/";
@@ -85,8 +87,16 @@ export default class Header extends HTMLElement {
       textElem = document.createElement("a");
       textElem.setAttribute("class", "HeaderMenuText");
       textElem.textContent = text.toUpperCase();
-      if (index > 0) href = `/${text}`;
+
+      // set href
+      if (index > 0 && !text.match("about.me")) {
+        href = `/${text}`
+      } else if (!text.match("home")) {
+        href = "https://did0es.me";
+        textElem.target = "_blank";
+      }
       textElem.href = href;
+
       textWrapElem.appendChild(textElem);
       headerMenuCenter.appendChild(textWrapElem);
 
@@ -132,6 +142,7 @@ export default class Header extends HTMLElement {
     // close menu
     headerMenuCloseWrap.onclick = () => {
       headerMenuWrap.style.transform = "translateX(-100%)";
+      headerMenuWrap.style.opacity = "0";
     }
 
     // close icon animation
@@ -227,7 +238,7 @@ export default class Header extends HTMLElement {
         justify-content: center;
         align-items: center;
         background: rgba(0, 0, 0, .6);
-        transition: transform cubic-bezier(.9,.23,.48,.97) .4s;
+        transition: transform cubic-bezier(.9,.23,.48,.97) .4s, opacity cubic-bezier(.9,.23,.48,.97) .4s;
         transform: translateX(-100%);
       }
 
@@ -276,6 +287,10 @@ export default class Header extends HTMLElement {
         cursor: pointer;
         text-decoration: none;
         transition: color ease-in-out .2s;
+      }
+
+      button:focus {
+        outline: 0;
       }
     `
 
