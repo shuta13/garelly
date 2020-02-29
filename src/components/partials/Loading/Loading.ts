@@ -71,6 +71,10 @@ export default class Loading extends HTMLElement {
         }
       `;
       shadow.appendChild(LoadingWrapFinishedStyle);
+      document.body.style.overflow = "hidden";
+      setTimeout(() => {
+        document.body.style.overflow = "scroll";
+      }, 1600);
     });
   }
 };
