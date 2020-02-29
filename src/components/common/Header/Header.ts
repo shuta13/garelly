@@ -1,6 +1,6 @@
 import logo from "../../../assets/img/header-logo.png";
 import icon from "../../../assets/img/icon.png";
-import close from "../../../assets/img/close-icon.png";
+import closeIcon from "../../../assets/img/close-icon.png";
 
 export default class Header extends HTMLElement {
   constructor() {
@@ -63,6 +63,21 @@ export default class Header extends HTMLElement {
       textElem.href = href;
       textWrapElem.appendChild(textElem);
       headerMenuCenter.appendChild(textWrapElem);
+
+      // color animation
+      textElem.onmouseenter = () => {
+        textElem.style.color = "#48BB36";
+      };
+      textElem.onmouseleave = () => {
+        textElem.style.color = "#dbdbdb";
+      };
+      // touch
+      textElem.ontouchstart = () => {
+        textElem.style.color = "#48BB36";
+      };
+      textElem.ontouchend = () => {
+        textElem.style.color = "#dbdbdb";
+      };
     });
 
     // menu close icon
@@ -70,12 +85,27 @@ export default class Header extends HTMLElement {
     headerMenuCloseWrap.setAttribute("class", "HeaderMenuCloseWrap");
     const headerMenuCloseIcon = document.createElement("img");
     headerMenuCloseIcon.setAttribute("class", "HeaderMenuCloseIcon");
-    headerMenuCloseIcon.src = close;
+    headerMenuCloseIcon.src = closeIcon;
     headerMenuCloseWrap.appendChild(headerMenuCloseIcon);
     
     // close menu
     headerMenuCloseWrap.onclick = () => {
       headerMenuWrap.style.transform = "translateX(-100%)";
+    }
+
+    // close icon animation
+    headerMenuCloseWrap.onmouseenter = () => {
+      headerMenuCloseIcon.style.transform = "rotate(360deg)";
+    }
+    headerMenuCloseWrap.onmouseleave = () => {
+      headerMenuCloseIcon.style.transform = "rotate(0deg)";
+    }
+    // touch
+    headerMenuCloseWrap.ontouchstart = () => {
+      headerMenuCloseIcon.style.transform = "rotate(360deg)";
+    }
+    headerMenuCloseWrap.ontouchend = () => {
+      headerMenuCloseIcon.style.transform = "rotate(0deg)";
     }
 
     headerMenuWrap.appendChild(headerMenuCloseWrap);
@@ -130,6 +160,10 @@ export default class Header extends HTMLElement {
       .HeaderIcon, .HeaderMenuCloseIcon {
         width: 18px;
         height: auto;
+      }
+
+      .HeaderMenuCloseIcon {
+        transition: transform cubic-bezier(.9,.23,.48,.97) .4s;
       }
 
       .HeaderMenuWrap {
@@ -189,6 +223,7 @@ export default class Header extends HTMLElement {
         color: #dbdbdb;
         cursor: pointer;
         text-decoration: none;
+        transition: color ease-in-out .2s;
       }
     `
 
