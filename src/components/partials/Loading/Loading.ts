@@ -14,9 +14,8 @@ export default class Loading extends HTMLElement {
     const LoadingLogo = document.createElement("img");
     LoadingLogo.setAttribute("class", "LoadingLogo LoadingLogoFinished");
 
-    // insert logo img
+    // insert loading logo img
     let logoUrl: string | null = "";
-    console.log(logoUrl);
     if (this.hasAttribute("logo")) {
       logoUrl = this.getAttribute("logo");
       this.loadImage(`${logoUrl}`)

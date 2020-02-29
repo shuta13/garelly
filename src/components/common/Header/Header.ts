@@ -20,7 +20,20 @@ export default class Header extends HTMLElement {
 
     const headerLogo = document.createElement("img");
     headerLogo.setAttribute("class", "HeaderLogo");
-    headerLogo.src = logo;
+
+    // insert logo img
+    let logoUrl: string | null = "";
+    if (this.hasAttribute("logo")) {
+      logoUrl = this.getAttribute("logo");
+      this.loadImage(`${logoUrl}`)
+        .then(() => {
+          if (logo && logoUrl !== null) headerLogo.src = logoUrl;
+        })
+        .catch((e) => {
+          // throw e;
+        });
+    }
+
     headerLogoWrap.appendChild(headerLogo);
 
     // icon
@@ -28,7 +41,20 @@ export default class Header extends HTMLElement {
     headerIconWrap.setAttribute("class", "HeaderIconWrap");
     const headerIcon = document.createElement("img");
     headerIcon.setAttribute("class", "HeaderIcon");
-    headerIcon.src = icon;
+
+    // insert icon img
+    let iconUrl: string | null = "";
+    if (this.hasAttribute("icon")) {
+      iconUrl = this.getAttribute("icon");
+      this.loadImage(`${iconUrl}`)
+        .then(() => {
+          if (icon && iconUrl !== null) headerIcon.src = iconUrl;
+        })
+        .catch((e) => {
+          // throw e;
+        });
+    }
+
     headerIconWrap.appendChild(headerIcon);
 
     // open menu
@@ -87,7 +113,20 @@ export default class Header extends HTMLElement {
     headerMenuCloseWrap.setAttribute("class", "HeaderMenuCloseWrap");
     const headerMenuCloseIcon = document.createElement("img");
     headerMenuCloseIcon.setAttribute("class", "HeaderMenuCloseIcon");
-    headerMenuCloseIcon.src = closeIcon;
+    
+    // insert close icon img
+    let closeIconUrl: string | null = "";
+    if (this.hasAttribute("close")) {
+      closeIconUrl = this.getAttribute("close");
+      this.loadImage(`${closeIconUrl}`)
+        .then(() => {
+          if (closeIcon && closeIconUrl !== null) headerMenuCloseIcon.src = closeIconUrl;
+        })
+        .catch((e) => {
+          // throw e;
+        });
+    }
+
     headerMenuCloseWrap.appendChild(headerMenuCloseIcon);
     
     // close menu
@@ -115,6 +154,15 @@ export default class Header extends HTMLElement {
 
     // render whole tree
     this.render(headerWrap);
+  }
+  
+  loadImage(src: string) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(img);
+      img.src = src;
+    })
   }
 
   render(headerWrap: HTMLDivElement) {
