@@ -46,7 +46,6 @@ export default class Loading extends HTMLElement {
         transform: translateX(0%);
         transition: opacity cubic-bezier(.9,.23,.48,.97) .6s, transform cubic-bezier(.9,.23,.48,.97) .8s;
         transition-delay: .2s;
-        animation-iteration-count: infinite;
       }
     `;
     shadow.appendChild(LoadingStyle);
