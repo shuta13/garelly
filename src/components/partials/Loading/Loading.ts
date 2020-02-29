@@ -1,4 +1,4 @@
-import logo from "../../../assets/img/loading-logo.png";
+import logo from "../../../../assets/img/loading-logo.png";
 
 export default class Loading extends HTMLElement {
   constructor() {

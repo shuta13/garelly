@@ -23,7 +23,7 @@ module.exports = {
       chunks: ["index"],
       filename: "index.html",
       template: PAGES_PATH + "/index.html",
-      favicon: SRC_PATH + "/assets/favicon.ico"
+      favicon: "assets/favicon.ico"
     }),
     new HtmlWebpackPlugin({
       title: "garelly - graphics",
@@ -32,7 +32,7 @@ module.exports = {
       chunks: ["graphics"],
       filename: "graphics/index.html",
       template: PAGES_PATH + "/graphics/index.html",
-      favicon: SRC_PATH + "/assets/favicon.ico"
+      favicon: "assets/favicon.ico"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
@@ -68,7 +68,7 @@ module.exports = {
         test: /\.(gif|png|jpg|eot|wof|woff|woff2|ttf|svg)$/,
         loader: "file-loader",
         options: {
-          name: "assets/img/[name].[ext]"
+          name: "[path][name].[ext]"
         }
       }
     ]

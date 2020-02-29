@@ -1,8 +1,8 @@
-import error from "../../../assets/img/error-image.jpg";
+import error from "../../../../assets/img/error-image.jpg";
 
 const images: Array<string> = [];
 for (let i = 0; i < 8; i++) {
-  import(`../../../assets/img/works${i}.jpg`)
+  import(`../../../../assets/img/works${i}.jpg`)
     .then((works) => {
       images.push(works.default);
     })
