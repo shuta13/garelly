@@ -1,3 +1,5 @@
+import logo from "../../../assets/img/loading-logo.png";
+
 export default class Loading extends HTMLElement {
   constructor() {
     super();
@@ -9,10 +11,10 @@ export default class Loading extends HTMLElement {
     const LoadingWrap = document.createElement("div");
     LoadingWrap.setAttribute("class", "LoadingWrap LoadingWrapFinished");
 
-    const LoadingText = document.createElement("div");
-    LoadingText.setAttribute("class", "LoadingText LoadingTextFinished");
-    LoadingText.textContent = "loAdinG";
-    LoadingWrap.appendChild(LoadingText);
+    const LoadingLogo = document.createElement("img");
+    LoadingLogo.setAttribute("class", "LoadingLogo LoadingLogoFinished");
+    LoadingLogo.src = logo;
+    LoadingWrap.appendChild(LoadingLogo);
 
     this.render(LoadingWrap);
   }
@@ -33,14 +35,14 @@ export default class Loading extends HTMLElement {
         align-items: center;
         top: 0;
         background: #dbdbdb;
-        transition: transform cubic-bezier(.56,.11,.45,.86) .8s;
+        transition: transform cubic-bezier(.9,.23,.48,.97) .8s;
+        transition-delay: .6s;
       }
 
-      .LoadingText {
-        font-size: 32px;
-        font-family: "Major Mono Display";
-        color: #1d1d1d;
-        transition: opacity cubic-bezier(.56,.11,.45,.86) .4s;
+      .LoadingLogo {
+        width: 160px;
+        height: auto;
+        transition: opacity cubic-bezier(.9,.23,.48,.97) .4s, transform cubic-bezier(.9,.23,.48,.97) .8s;
       }
     `;
     shadow.appendChild(LoadingStyle);
@@ -52,7 +54,8 @@ export default class Loading extends HTMLElement {
     window.addEventListener("load", () => {
       const LoadingTextFinishedStyle = document.createElement("style");
       LoadingTextFinishedStyle.textContent = `
-        .LoadingTextFinished {
+        .LoadingLogoFinished {
+          transform: translateY(100%);
           opacity: 0;
         }
       `;
