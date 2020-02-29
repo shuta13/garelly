@@ -5,7 +5,6 @@ const images: Array<string> = [];
 for (let i = 0; i < 8; i++) {
   import(`../../../assets/img/works${i}.jpg`)
     .then((works) => {
-      console.log(`imported ${works.default}`);
       images.push(works.default);
     })
     .catch((e) => {
