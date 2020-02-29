@@ -1,6 +1,6 @@
-import logo from "../../../assets/brands/header-logo.png";
-import icon from "../../../assets/brands/icon.png";
-import closeIcon from "../../../assets/brands/close-icon.png";
+import logo from "../../../assets/img/header-logo.png";
+import icon from "../../../assets/img/icon.png";
+import closeIcon from "../../../assets/img/close-icon.png";
 
 export default class Header extends HTMLElement {
   constructor() {
