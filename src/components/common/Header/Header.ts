@@ -93,7 +93,6 @@ export default class Header extends HTMLElement {
         href = `/${text}`
       } else if (!text.match("home")) {
         href = "https://did0es.me";
-        textElem.target = "_blank";
       }
       textElem.href = href;
 
@@ -110,12 +109,12 @@ export default class Header extends HTMLElement {
         textElem.style.color = defaultColor;
       };
       // touch
-      textElem.ontouchstart = () => {
+      textElem.addEventListener("touchstart", () => {
         textElem.style.color = onColor;
-      };
-      textElem.ontouchend = () => {
+      }, { passive: true });
+      textElem.addEventListener("touchend", () => {
         textElem.style.color = defaultColor;
-      };
+      }, { passive: true });
     });
 
     // menu close icon
@@ -153,12 +152,12 @@ export default class Header extends HTMLElement {
       headerMenuCloseIcon.style.transform = "rotate(0deg)";
     }
     // touch
-    headerMenuCloseWrap.ontouchstart = () => {
+    headerMenuCloseWrap.addEventListener("touchstart", () => {
       headerMenuCloseIcon.style.transform = "rotate(360deg)";
-    }
-    headerMenuCloseWrap.ontouchend = () => {
+    }, { passive: true });
+    headerMenuCloseWrap.addEventListener("touchend", () => {
       headerMenuCloseIcon.style.transform = "rotate(0deg)";
-    }
+    }, { passive: true });
 
     headerMenuWrap.appendChild(headerMenuCloseWrap);
     headerWrap.appendChild(headerMenuWrap);
