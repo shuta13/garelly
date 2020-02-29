@@ -6,6 +6,8 @@ body, html {
 }
 
 .IndexWrap {
+  position: absolute;
+  top: 0;
   width: 100vw;
   display: flex;
   min-height: 100vh;

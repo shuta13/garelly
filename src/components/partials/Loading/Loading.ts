@@ -7,8 +7,7 @@ export default class Loading extends HTMLElement {
 
   create() {
     const LoadingWrap = document.createElement("div");
-    LoadingWrap.setAttribute("class", "LoadingWrap");
-    LoadingWrap.setAttribute("class", "LoadingFinished");
+    LoadingWrap.setAttribute("class", "LoadingWrap LoadingFinished");
 
     const LoadingText = document.createElement("div");
     LoadingText.setAttribute("class", "LoadingText");
