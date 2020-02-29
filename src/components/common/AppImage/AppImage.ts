@@ -76,9 +76,9 @@ export default class AppImage extends HTMLElement {
         width: 100%;
       }
     `;
+    shadow.appendChild(appImageStyle);
     
     shadow.appendChild(appImageClip);
-    shadow.appendChild(appImageStyle);
   };
 }
 
