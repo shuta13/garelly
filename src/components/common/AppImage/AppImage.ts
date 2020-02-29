@@ -2,7 +2,7 @@ import "./AppImage.scss";
 import error from "../../../assets/img/error-image.jpg";
 import("../../../assets/img/works01.jpg").then((works01) => {
   console.log(`loaded ${works01.default}`);
-})
+});
 
 const css = new CSSStyleSheet() as any;
 
