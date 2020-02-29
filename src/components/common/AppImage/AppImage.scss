@@ -1,4 +1,4 @@
-.AppImageClip {
+app-image::part(AppImageClip) {
   max-width: 464px;
   max-height: 232px;
   width: 80vw;
@@ -12,13 +12,13 @@
   color: #fff;
 }
 
-.AppImageWrap {
+app-image::part(AppImageWrap) {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.AppImage {
+app-image::part(AppImage) {
   width: 100%;
 }

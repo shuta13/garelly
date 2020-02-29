@@ -13,8 +13,6 @@ for (let i = 0; i < 8; i++) {
     })
 }
 
-const css = new CSSStyleSheet() as any;
-
 export default class AppImage extends HTMLElement {
   constructor() {
     super();
@@ -24,9 +22,9 @@ export default class AppImage extends HTMLElement {
   create() {
     // clip, wrap image dom
     const appImageClip = document.createElement("div");
-    appImageClip.setAttribute("class", "AppImageClip");
+    appImageClip.setAttribute("part", "AppImageClip");
     const appImageWrap = document.createElement("div");
-    appImageWrap.setAttribute("class", "AppImageWrap");
+    appImageWrap.setAttribute("part", "AppImageWrap");
 
     // insert image
     let imgUrl: string | null = "";
@@ -37,7 +35,7 @@ export default class AppImage extends HTMLElement {
     }
     const appImage = document.createElement("img");
     if (imgUrl !== null) appImage.src = imgUrl;
-    appImage.setAttribute("class", "AppImage");
+    appImage.setAttribute("part", "AppImage");
     appImageWrap.appendChild(appImage);
 
     appImageClip.appendChild(appImageWrap);
@@ -46,11 +44,7 @@ export default class AppImage extends HTMLElement {
 
   render(appImageClip: HTMLDivElement) {
     const shadow = this.attachShadow({ mode: "open" });
-    const shadowRoot = this.shadowRoot as any;
-    css.replace(`@import "index.css";`).then(() => {
-      shadow.appendChild(appImageClip);
-    });
-    shadowRoot.adoptedStyleSheets = [css];
+    shadow.appendChild(appImageClip);
   };
 }
 
