@@ -28,7 +28,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "garelly - graphics",
       inject: false,
-      minify: false,
+      minify: true,
       chunks: ["graphics"],
       filename: "graphics/index.html",
       template: PAGES_PATH + "/graphics/index.html",
