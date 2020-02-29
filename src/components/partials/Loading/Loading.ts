@@ -36,13 +36,14 @@ export default class Loading extends HTMLElement {
         top: 0;
         background: #dbdbdb;
         transition: transform cubic-bezier(.9,.23,.48,.97) .8s;
-        transition-delay: .6s;
+        transition-delay: .8s;
       }
 
       .LoadingLogo {
         width: 160px;
         height: auto;
         transition: opacity cubic-bezier(.9,.23,.48,.97) .4s, transform cubic-bezier(.9,.23,.48,.97) .8s;
+        transition-delay: .4s;
       }
     `;
     shadow.appendChild(LoadingStyle);
