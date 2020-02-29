@@ -7,8 +7,8 @@ body, html {
 
 .IndexWrap {
   width: 100vw;
-  height: 100vh;
   display: flex;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
