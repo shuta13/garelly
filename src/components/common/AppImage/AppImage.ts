@@ -1,4 +1,3 @@
-import "./AppImage.scss";
 import error from "../../../assets/img/error-image.jpg";
 
 const images: Array<string> = [];
@@ -73,7 +72,7 @@ export default class AppImage extends HTMLElement {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 8px;
+        margin: 48px;
         overflow: hidden;
         background: #1d1d1d;
         color: #fff;
