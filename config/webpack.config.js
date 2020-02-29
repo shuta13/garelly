@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const workboxPlugin = require("workbox-webpack-plugin");
 const TerserJSPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const ManifestPlugin = require("webpack-manifest-plugin");
 
 const SRC_PATH = path.resolve(__dirname, "../src");
 const PAGES_PATH = path.resolve(__dirname, "../src/pages");
@@ -45,7 +46,8 @@ module.exports = {
       swDest: PUBLIC_PATH + "/sw.js",
       clientsClaim: true,
       skipWaiting: true,
-    })
+    }),
+    new ManifestPlugin()
   ],
   module: {
     rules: [
