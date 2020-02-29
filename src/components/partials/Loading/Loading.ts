@@ -13,10 +13,32 @@ export default class Loading extends HTMLElement {
 
     const LoadingLogo = document.createElement("img");
     LoadingLogo.setAttribute("class", "LoadingLogo LoadingLogoFinished");
-    LoadingLogo.src = logo;
+
+    let logoUrl: string | null = "";
+    console.log(logoUrl);
+    if (this.hasAttribute("logo")) {
+      logoUrl = this.getAttribute("logo");
+      this.loadImage(`${logoUrl}`)
+        .then(() => {
+          if (logo && logoUrl !== null) LoadingLogo.src = logoUrl;
+        })
+        .catch((e) => {
+          // throw e;
+        });
+    }
+
     LoadingWrap.appendChild(LoadingLogo);
 
     this.render(LoadingWrap);
+  }
+
+  loadImage(src: string) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(img);
+      img.src = src;
+    })
   }
 
   render(LoadingWrap: HTMLDivElement) {

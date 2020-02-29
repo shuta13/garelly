@@ -30,7 +30,6 @@ export default class AppImage extends HTMLElement {
     let imgUrl: string | null = "";
     if (this.hasAttribute("img")) {
       imgUrl = this.getAttribute("img");
-      console.log(imgUrl);
       this.loadImage(`${imgUrl}`)
         .then(() => {
           const appImage = document.createElement("img");
