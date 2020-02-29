@@ -64,7 +64,7 @@ export default class Loading extends HTMLElement {
         }
       `;
       shadow.appendChild(LoadingWrapFinishedStyle);
-    })
+    });
   }
 };
 

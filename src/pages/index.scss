@@ -5,13 +5,15 @@ body, html {
   box-sizing: border-box;
 }
 
+.app-image {
+  margin: 8px;
+}
+
 .IndexWrap {
   position: absolute;
   top: 0;
   width: 100vw;
-  display: flex;
   min-height: 100vh;
-  flex-wrap: wrap;
   background: #dbdbdb;
 }
 
@@ -21,5 +23,5 @@ body, html {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 88px;
+  margin-top: 10vh;
 }
