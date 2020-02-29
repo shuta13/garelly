@@ -39,7 +39,7 @@ export default class AppImage extends HTMLElement {
           appImageWrap.appendChild(appImage);
         })
         .catch((e) => {
-          throw e;
+          // throw e;
         });
     } else {
       imgUrl = error;
