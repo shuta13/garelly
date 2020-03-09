@@ -242,7 +242,8 @@ export default class Header extends HTMLElement {
         justify-content: center;
         align-items: center;
         background: rgba(0, 0, 0, .6);
-        transition: transform cubic-bezier(.9,.23,.48,.97) .4s, opacity cubic-bezier(.9,.23,.48,.97) .4s;
+        transition: transform cubic-bezier(.9,.23,.48,.97) .3s, opacity cubic-bezier(.9,.23,.48,.97) .4s;
+        opacity: 0;
         transform: translateX(-100%);
       }
 
