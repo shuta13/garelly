@@ -1,4 +1,7 @@
 # GARELLY
-> Garelly Project
+> My Works by Adobe Photoshop, Processing, CLIP STUDIO
 
-Google Chrome, Firefox, Safariでご覧ください
+> Also, experimental site of custom element
+
+### ref
+- [Custom Element Registry](https://developer.mozilla.org/ja/docs/Web/API/CustomElementRegistry)
